@@ -46,7 +46,7 @@ class Category extends Component {
         }
 
         if (nameError || descriptionError) {
-            this.setState({ nameError, descriptionError })
+            this.setState({ ...this.state, nameError, descriptionError })
             return false;
         }
 
