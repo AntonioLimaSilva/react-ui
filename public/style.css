@@ -5,3 +5,16 @@
 .grid-table {
     margin-top: 20px;
 }
+
+.custom-select {
+    position: relative;
+    font-family: Arial;
+  }
+  
+.custom-select select {
+    display: none; /*hide original SELECT element:*/
+}
+  
+.select-selected {
+    background-color: DodgerBlue;
+}

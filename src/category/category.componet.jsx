@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 import PageHeader from  '../template/page-header.componet'
-import Form from '../template/form.componet'
-import Table from '../template/table.componet'
+import Form from '../template/form-category.componet'
+import Table from '../template/table-category.componet'
 
 const url = 'http://localhost:3001/api/v1/categories'
 
