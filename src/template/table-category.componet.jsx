@@ -1,9 +1,12 @@
 import React from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 import IconButton from './icon-button.component'
+import { edit, deleteById } from '../store/action/category-action'
 
 import '../../public/style.css'
 
-export default props => {
+const categoriesTable = props => {
     
     const rows = () => {
         const categories = props.categories || []
@@ -14,9 +17,9 @@ export default props => {
                 <td>{ c.description }</td>
                 <td>
                     <IconButton style='info' icon='pencil' 
-                        onClick={ () => props.handleEdit(c) } />
+                        onClick={ () => props.edit(c) } />
                     <IconButton style='danger' icon='trash-o'
-                        onClick={ () => props.handleRemove(c) } />
+                        onClick={ () => props.deleteById(c._id) } />
                 </td>
             </tr>
         ))
@@ -37,3 +40,10 @@ export default props => {
         </table>
     )
 }
+
+// Pegando do estado global atravez do REDUX
+const mapStateToCategories = state => ({ categories: state.category.categories })
+
+const mapDispatchToProps = dispatch => bindActionCreators({ edit, deleteById }, dispatch)
+
+export default connect(mapStateToCategories, mapDispatchToProps)(categoriesTable)

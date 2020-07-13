@@ -17,8 +17,8 @@ const initialState = {
     productsAll: []
 }
 
-const URLCategory = 'http://localhost:3001/api/v1/categories'
-const URLProduct = 'http://localhost:3001/api/v1/products'
+const URLCategory = 'http://localhost:3002/api/v1/categories'
+const URLProduct = 'http://localhost:3002/api/v1/products'
 
 class Product extends Component {
 
