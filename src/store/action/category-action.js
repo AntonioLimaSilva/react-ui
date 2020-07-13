@@ -37,7 +37,7 @@ export const add = request => {
         }
     }
 
-    return [ handleErrors(request) ]
+    return handleErrors(request)
 }
 
 export const edit = request => {
