@@ -2,8 +2,6 @@ import axios from 'axios'
 
 const URL = 'http://localhost:3002/api/v1/categories'
 
-const fieldErrors = {}
-
 export const changeName = event => ({
     type: 'NAME_CHANGED',
     payload: event.target.value
@@ -24,7 +22,7 @@ export const search = () => {
 }
 
 export const add = request => {
-    if (validate(request)) {
+    if (request.name && request.description) {
         return dispatch => {
             const { name, description } = request
             if (request.id) {
@@ -61,13 +59,3 @@ const handleErrors = (request) => ({
         descriptionError: !request.description ? 'Descrição não pode ser vazio' : ''
     }
 })
-
-function validate(request) {
-    let isValid = true
-
-    if (!request.name || !request.description) {
-        isValid = false
-    }
-
-    return isValid;
-}
