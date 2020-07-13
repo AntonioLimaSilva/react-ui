@@ -2,7 +2,7 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import IconButton from './icon-button.component'
-import { edit, deleteById } from '../store/action/category-action'
+import { edit, deleteById } from '../store/actions/category-action'
 
 import '../../public/style.css'
 

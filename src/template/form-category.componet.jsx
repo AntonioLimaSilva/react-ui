@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Grid from './grid.component'
 import IconButton from './icon-button.component'
-import { changeName, changeDescription, search, add } from '../store/action/category-action'
+import { changeName, changeDescription, search, add } from '../store/actions/category-action'
 
 class categoryForm extends Component {
 
